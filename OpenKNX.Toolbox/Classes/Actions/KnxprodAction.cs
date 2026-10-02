@@ -41,14 +41,16 @@ namespace OpenKNX.Toolbox.Classes.Actions
 
         private string _xmlPath = string.Empty;
         private string _outputPath = string.Empty;
+        private readonly string _translationsPath;
         private CancellationToken _token = default;
 
 
-        public KnxprodAction(string name, string xmlPath, string output)
+        public KnxprodAction(string name, string xmlPath, string output, string translationsPath = "")
         {
             Name = string.Format(Properties.Resources.CreateKnxprodDisplay, name);
             _xmlPath = xmlPath;
             _outputPath = output;
+            _translationsPath = translationsPath;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -75,7 +77,7 @@ namespace OpenKNX.Toolbox.Classes.Actions
             if (workingDir == null)
                 throw new Exception("Could not retrieve workingdir: " + _xmlPath);
 
-            await Sign.SignHelper.ExportKnxprodAsync(workingDir, _outputPath, _xmlPath, "", false, false, string.Empty, _token);
+            await Sign.SignHelper.ExportKnxprodAsync(workingDir, _outputPath, _xmlPath, "", false, false, string.Empty, _token, translationsPath: _translationsPath);
         }
     }
 }

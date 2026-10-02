@@ -48,8 +48,13 @@ namespace OpenKNX.Toolbox.Models
             {
                 _contentModel = value;
                 Changed("ContentModel");
+                Changed(nameof(CreateKnxprodLabel));
             }
         }
+
+        public string CreateKnxprodLabel => string.IsNullOrEmpty(ContentModel?.TranslationsPath)
+            ? Properties.Resources.CreateKnxprod
+            : Properties.Resources.CreateKnxprodWithEnglish;
 
         public ReleaseModel(AppRelease release, string appId)
         {
@@ -115,7 +120,7 @@ namespace OpenKNX.Toolbox.Models
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                ActionsViewModel.Instanz.AddAction(new KnxprodAction($"{ContentModel.ReleaseName} {Version.ToString()}", ContentModel.XmlFile, saveFileDialog.FileName));
+                ActionsViewModel.Instanz.AddAction(new KnxprodAction($"{ContentModel.ReleaseName} {Version.ToString()}", ContentModel.XmlFile, saveFileDialog.FileName, ContentModel.TranslationsPath));
             }
 
         }

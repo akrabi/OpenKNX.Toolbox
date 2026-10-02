@@ -131,6 +131,9 @@
   <data name="CreateKnxprod" xml:space="preserve">
     <value>Knxprod erstellen</value>
   </data>
+  <data name="CreateKnxprodWithEnglish" xml:space="preserve">
+    <value>Knxprod mit englischen Übersetzungen erstellen</value>
+  </data>
   <data name="FlashToDevice" xml:space="preserve">
     <value>Auf Gerät flashen</value>
   </data>

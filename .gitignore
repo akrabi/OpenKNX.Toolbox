@@ -1,5 +1,5 @@
-OpenKNX.Toolbox/bin/**
-OpenKNX.Toolbox/obj/**
+bin/
+obj/
 /Storage
 CV/**
 /.vs

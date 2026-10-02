@@ -140,6 +140,12 @@ namespace OpenKNX.Toolbox.Properties {
                 return ResourceManager.GetString("CreateKnxprod", resourceCulture);
             }
         }
+
+        public static string CreateKnxprodWithEnglish {
+            get {
+                return ResourceManager.GetString("CreateKnxprodWithEnglish", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Create knxprod {0}.
